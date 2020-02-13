@@ -1,0 +1,46 @@
+On a plusieurs parties
+1) Model => on y trouve une classe qui décrit un voisin. Ainsi on va y mettre toutes les propriétés à savoir, le nom d'un voisin, sa description, son tel, etc
+
+2) Service => Mécanisme qui permet de fournir la liste des voisins, et d'autres fonctionnalités. Par exemple on peut ajouter une fonctionnalité fournissant la liste des voisins favoris
+
+3) UI => Interface utilisateur
+-> Les activités (ListNeighbourActivity et PersonActivity)
+Une activity représente un écran. Soit elle affiche directement les éléments (comme le fait PersonActivity) soit elle englobe un ou plusieurs fragments
+
+-> Les fragments: NeighbourFragment qui affiche la liste des voisins.
+Pour afficher une liste on utilise la plupart du temps un recyclerView.
+Un recyclerView à besoin d'un adapter qui indique comment afficher une ligne de la liste
+
+-> ViewPager qui permet de scroller de droite à gauche plusieurs écrans. Ainsi un viewPager va contenir plusieurs fragments.
+Pour fonctionner le viewPager doit avoir un adapter (ici ListNeighbourPagerAdapter) afin de dire comment afficher chaque écran à telle position.
+
+Un fragment ou une Activity va utiliser un fichier xml pour indiquer comment le layout est fait.
+Le recyclerView (ou plutôt son adapter) utilise aussi un fichier xml pour indiquer comment est le layout d'une ligne de la liste.
+
+
+
+
+Fonctionnement d'un adapter
+----------------------------
+
+Un adapter prend une liste d'objet (par exemple une liste de Neighbour) puis pour chaque Neighbour à la position i
+il va prendre les données que Neighbour offre, et les adapter au layout (.xml) qu'on lui indique.
+
+
+
+Les poupées russes
+-----------------
+
+ListNeighbourActivity
+|
+------ ViewPager (fonctionne de pair avec un adapter)
+        |
+        ------ Fragments (s'il y a 5 onglets, on aura surement 5 fragments)
+                |
+                ------ RecyclerView (fonctionne de pair avec un adapter)
+
+
+
+DummyNeighbourApiService -----Récupère les infos depuis ----> DummyNeighbourGenerator
+|
+|----------> Fournit la liste des Neighbour à la demande
