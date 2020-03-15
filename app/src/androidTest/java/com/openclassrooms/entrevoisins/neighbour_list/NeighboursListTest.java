@@ -108,7 +108,7 @@ public class NeighboursListTest {
     }
 
     @Test
-    public void myNeighbourListClickDelete () {
+    public void checkFavorites() {
         // On vérifie que la liste des favoris est vide
         onView(ViewMatchers.withId(R.id.list_favorite_neighbours))
                 .check(withItemCount(0));

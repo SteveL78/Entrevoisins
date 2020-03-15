@@ -113,44 +113,5 @@ public class NeighbourFragment extends Fragment {
         initList();
     }
 
-    /**
-     * Fired if the user clicks on neighbour
-     *
-     * @param event
-     */
-    @Subscribe
-    public void openNeighbour(OpenNeighbourEvent event) {
-        if (!isVisible()) return;
-
-        if (!showFavoriteOnly) {
-
-            Intent intent = new Intent(getActivity(), PersonActivity.class);
-       /* intent.putExtra("id", event.neighbour.getId());
-        intent.putExtra("name", event.neighbour.getName());
-        intent.putExtra("avatar", event.neighbour.getAvatarUrl());
-        intent.putExtra("phone", event.neighbour.getTelephone());
-        intent.putExtra("city", event.neighbour.getCity());*/
-            intent.putExtra("neighbour", event.neighbour);
-            startActivity(intent);
-        }
-    }
-
-    @Subscribe
-    public void openNeighbour(OpenFavoriteNeighbourEvent event) {
-
-        if (showFavoriteOnly) {
-
-            Intent intent = new Intent(getActivity(), PersonActivity.class);
-       /* intent.putExtra("id", event.neighbour.getId());
-        intent.putExtra("name", event.neighbour.getName());
-        intent.putExtra("avatar", event.neighbour.getAvatarUrl());
-        intent.putExtra("phone", event.neighbour.getTelephone());
-        intent.putExtra("city", event.neighbour.getCity());*/
-            intent.putExtra("neighbour", event.neighbour);
-            startActivity(intent);
-        }
-    }
-
-
 
 }

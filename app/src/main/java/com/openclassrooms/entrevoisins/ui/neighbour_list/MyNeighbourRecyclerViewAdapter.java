@@ -76,9 +76,7 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
             @Override
             public void onClick(View view) {
                 //Toast.makeText(holder.mDeleteButton.getContext(), "click", Toast.LENGTH_SHORT).show();
-               if (showFavoriteOnly)
-                   EventBus.getDefault().post(new OpenFavoriteNeighbourEvent(neighbour));
-               else EventBus.getDefault().post(new OpenNeighbourEvent(neighbour));
+               EventBus.getDefault().post(new OpenNeighbourEvent(neighbour));
             }
         });
     }
