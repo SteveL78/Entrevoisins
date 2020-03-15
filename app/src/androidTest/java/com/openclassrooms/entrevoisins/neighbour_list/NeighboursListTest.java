@@ -4,6 +4,7 @@ package com.openclassrooms.entrevoisins.neighbour_list;
 import android.support.test.espresso.ViewAction;
 import android.support.test.espresso.action.ScrollToAction;
 import android.support.test.espresso.contrib.RecyclerViewActions;
+import android.support.test.espresso.contrib.ViewPagerActions;
 import android.support.test.espresso.matcher.ViewMatchers;
 import android.support.test.filters.LargeTest;
 import android.support.test.rule.ActivityTestRule;
@@ -29,6 +30,7 @@ import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.assertThat;
 import static android.support.test.espresso.matcher.ViewMatchers.hasChildCount;
 import static android.support.test.espresso.matcher.ViewMatchers.hasMinimumChildCount;
+import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.isEnabled;
 import static android.support.test.espresso.matcher.ViewMatchers.isNotChecked;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
@@ -84,24 +86,23 @@ public class NeighboursListTest {
     }
 
     @Test
-    public void myNeighbourListClickAction () {
+    public void shouldOpenPersonActivity() {
+        // On clique sur le 1er de la liste de MyNeighbours
+        onView(ViewMatchers.withId(R.id.list_neighbours))
+                .perform(RecyclerViewActions.actionOnItemAtPosition(0, new ClickViewAction()));
+        // On vérifie que son nom est bien Caroline
+        onView(ViewMatchers.withId(R.id.name_profil))
+                .check(matches(isDisplayed()));
+    }
+
+    @Test
+    public void shouldDisplayNeighbourName() {
         // On clique sur le 1er de la liste de MyNeighbours
         onView(ViewMatchers.withId(R.id.list_neighbours))
                 .perform(RecyclerViewActions.actionOnItemAtPosition(0, new ClickViewAction()));
         // On vérifie que son nom est bien Caroline
         onView(ViewMatchers.withId(R.id.name_profil))
                 .check(matches(withText("Caroline")));
-
-        // On vérifie la couleur de l'étoile * état pas ajouté aux favoris
-       // TODO  onView(ViewMatchers.withId(R.id.add_favorite_star))
-               /*.check(matches(withDrawable(R.drawable.ic_star_black_24dp)));*/
-
-
-        onView(ViewMatchers.withId(R.id.add_favorite_star))
-                .perform(new ClickViewAction ());
-        pressBack();
-        onView(ViewMatchers.withId(R.id.list_favorite_neighbours))
-                .check(matches(hasChildCount(1)));
     }
 
     @Test
@@ -122,62 +123,32 @@ public class NeighboursListTest {
         onView(withId(R.id.add_favorite_star))
                 .perform(click());
 
-        // On vérifie la couleur de l'étoile est bien jaune car ajouté aux favoris
-      /*  onView(withId(R.id.add_favorite_star))
-                .check(matches(ImageView(R.drawable.ic_star_yellow_24dp)));*/
-
         // On clique sur retour en arrière
         pressBack();
 
         // On reclique sur l'onglet favorites
-      /*  onView(ViewMatchers.withId(R.id.tabItem2))
-                .perform(new ClickViewAction ());*/
+        onView(withId(R.id.container))
+                .perform(ViewPagerActions.scrollRight());
 
-
-        onView(ViewMatchers.withId(R.id.list_favorite_neighbours)).check(withItemCount(1));
-
-        // On clique sur le 1er élement de la liste voisin qui s'y trouve
-       /* onView(ViewMatchers.withId(R.id.list_favorite_neighbours))
-                .perform(RecyclerViewActions.actionOnItemAtPosition(0, new ClickViewAction()));*/
-
-        // On clique sur l'étoile
-       /* onView(withId(R.id.add_favorite_star))
-                .perform(click());*/
-
-        // On vérifie que son état a changé - couleur noire
-       /* onView(withId(R.id.add_favorite_star))
-                .check(matches(ImageView(R.drawable.ic_star_border_black_24dp));*/
-
-        // On revient en arrière et vérifie que la liste est vide
-      //  pressBack();
-
-        onView(ViewMatchers.withId(R.id.list_favorite_neighbours)).check(withItemCount(0));
-/*
-
-        // On clique sur le 1er voisin
-        onView(ViewMatchers.withId(R.id.list_neighbours))
-                .perform(RecyclerViewActions.actionOnItemAtPosition(0, new ClickViewAction()));
-        // On vérifie son prénom
-        onView(ViewMatchers.withId(R.id.name_profil))
-                .check(matches(withText("Caroline")));
-       //On clique sur le bouton d'ajout aux favoris
-        onView(matches(with(R.id.add_favorite_star)))
-                .perform(new ClickViewAction ());
 
         onView(ViewMatchers.withId(R.id.list_favorite_neighbours))
-                .check(matches(hasChildCount(0)));*/
+                .check(withItemCount(1));
 
+        // On clique sur le 1er élement de la liste voisin qui s'y trouve
+        onView(ViewMatchers.withId(R.id.list_favorite_neighbours))
+                .perform(RecyclerViewActions.actionOnItemAtPosition(0, new ClickViewAction()));
 
+        // On clique sur l'étoile
+       onView(withId(R.id.add_favorite_star))
+                .perform(click());
 
+        // On revient en arrière et vérifie que la liste est vide
+         pressBack();
+
+        onView(ViewMatchers.withId(R.id.list_favorite_neighbours)).check(withItemCount(0));
 
 
         }
-
-
-
-
-
-
 
 
     }
