@@ -32,7 +32,7 @@ public class NeighbourFragment extends Fragment {
     private List<Neighbour> mNeighbours;
     private RecyclerView mRecyclerView;
 
-private boolean showFavoriteOnly;
+    private boolean showFavoriteOnly;
 
 
     /**
@@ -58,7 +58,14 @@ private boolean showFavoriteOnly;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_neighbour_list, container, false);
+        View view = null;
+        if (showFavoriteOnly) {
+            view = inflater.inflate(R.layout.fragment_favorite_neighbour_list, container, false);
+        }
+        else {
+            view = inflater.inflate(R.layout.fragment_neighbour_list, container, false);
+        }
+
         Context context = view.getContext();
         mRecyclerView = (RecyclerView) view;
         mRecyclerView.setLayoutManager(new LinearLayoutManager(context));

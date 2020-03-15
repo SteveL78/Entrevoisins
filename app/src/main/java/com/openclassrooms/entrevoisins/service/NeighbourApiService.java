@@ -26,16 +26,21 @@ public interface NeighbourApiService {
 
 
     /**
-     * Update neighbour
-     */
-    void updateNeighbour(Neighbour neighbour);
-
-
-    /**
      * Add neighbour
      */
     void addNeighbour(Neighbour neighbour);
 
+
+    /**
+     * Add to favorite
+     */
+    void addFavorite (Neighbour neighbour);
+
+
+    /**
+     * Remove for favorite
+     */
+    void removeFavorite (Neighbour neighbour);
 
 
     List<Neighbour> getFavoriteNeighbours();

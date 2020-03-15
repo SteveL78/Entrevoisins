@@ -30,7 +30,7 @@ public class DummyNeighbourApiService implements  NeighbourApiService {
         neighbours.remove(neighbour);
     }
 
-    @Override
+
     public void updateNeighbour(Neighbour neighbour) {
         for (int i = 0; i < neighbours.size(); i++) {
             Neighbour neighbourTemp = neighbours.get(i);
@@ -47,6 +47,18 @@ public class DummyNeighbourApiService implements  NeighbourApiService {
     @Override
     public void addNeighbour(Neighbour neighbour) {
         neighbours.add(neighbour);
+    }
+
+    @Override
+    public void addFavorite(Neighbour neighbour) {
+        neighbour.setFavorite(true);
+        updateNeighbour(neighbour);
+    }
+
+    @Override
+    public void removeFavorite(Neighbour neighbour) {
+        neighbour.setFavorite(false);
+        updateNeighbour(neighbour);
     }
 
 

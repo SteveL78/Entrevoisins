@@ -57,33 +57,34 @@ public class NeighbourServiceTest {
     }
 
 
-    @Test
-    public void getFavoriteNeighboursWithSuccess() {
-        List<Neighbour> allNeighbours = service.getNeighbours();
-        allNeighbours.get(0).setFavorite(true);
-        Neighbour neighbour=allNeighbours.get(0);
-        List<Neighbour> favoritesNeighbours = service.getFavoriteNeighbours();
-        assertTrue(favoritesNeighbours.contains(neighbour));
-    }
-
-
 
     // Ajouter un favori et vérifier s'il a bien été ajouté à la liste des favoris
 
     @Test
     public void addFavoriteNeighbourWithSuccess() {
         Neighbour favoriteNeighbourToAdd = service.getNeighbours().get(0);
-        service.deleteNeighbour(favoriteNeighbourToAdd);
-        assertFalse(service.getNeighbours().contains(favoriteNeighbourToAdd));
+        service.addFavorite(favoriteNeighbourToAdd);
+        assertTrue(service.getFavoriteNeighbours().contains(favoriteNeighbourToAdd));
+    }
+
+
+    @Test
+    public void getFavoriteNeighboursWithSuccess() {
+        Neighbour favoriteNeighbourToAdd = service.getNeighbours().get(0);
+        service.addFavorite(favoriteNeighbourToAdd);
+        List<Neighbour> favoritesNeighbours = service.getFavoriteNeighbours();
+        assertTrue(favoritesNeighbours.size()==1);
     }
 
 
     // Supprimer un favori et vérifier s'il a bien été supprimé de la liste
     @Test
     public void deleteFavoriteNeighbourWithSuccess() {
-        Neighbour favoriteNeighbourToDelete = service.getNeighbours().get(0);
-        service.deleteNeighbour(favoriteNeighbourToDelete);
-        assertFalse(service.getNeighbours().contains(favoriteNeighbourToDelete));
+        Neighbour favoriteNeighbourToAdd = service.getNeighbours().get(0);
+        service.addFavorite(favoriteNeighbourToAdd);
+        Neighbour favoriteNeighbourToDelete = service.getFavoriteNeighbours().get(0);
+        service.removeFavorite(favoriteNeighbourToDelete);
+        assertFalse(service.getFavoriteNeighbours().contains(favoriteNeighbourToDelete));
     }
 
 
