@@ -33,8 +33,10 @@ import static android.support.test.espresso.matcher.ViewMatchers.hasMinimumChild
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.isEnabled;
 import static android.support.test.espresso.matcher.ViewMatchers.isNotChecked;
+import static android.support.test.espresso.matcher.ViewMatchers.isRoot;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
+import static com.openclassrooms.entrevoisins.utils.ClickViewAction.waitFor;
 import static com.openclassrooms.entrevoisins.utils.RecyclerViewItemCountAssertion.withItemCount;
 import static org.hamcrest.core.IsNull.notNullValue;
 
@@ -114,6 +116,7 @@ public class NeighboursListTest {
         // On clique sur le 1er voisin en position 0
         onView(ViewMatchers.withId(R.id.list_neighbours))
                 .perform(RecyclerViewActions.actionOnItemAtPosition(0, new ClickViewAction()));
+        onView(isRoot()).perform(waitFor(500));
 
         // On vérifie que le nom correspond bien à sa position
         onView(ViewMatchers.withId(R.id.name_profil))
@@ -125,18 +128,21 @@ public class NeighboursListTest {
 
         // On clique sur retour en arrière
         pressBack();
+        onView(isRoot()).perform(waitFor(500));
 
         // On reclique sur l'onglet favorites
         onView(withId(R.id.container))
                 .perform(ViewPagerActions.scrollRight());
+        onView(isRoot()).perform(waitFor(500));
 
-
+        // On vérifie que la liste des favoris contient 1 voisin
         onView(ViewMatchers.withId(R.id.list_favorite_neighbours))
                 .check(withItemCount(1));
 
         // On clique sur le 1er élement de la liste voisin qui s'y trouve
         onView(ViewMatchers.withId(R.id.list_favorite_neighbours))
                 .perform(RecyclerViewActions.actionOnItemAtPosition(0, new ClickViewAction()));
+        onView(isRoot()).perform(waitFor(500));
 
         // On clique sur l'étoile
        onView(withId(R.id.add_favorite_star))
@@ -144,10 +150,9 @@ public class NeighboursListTest {
 
         // On revient en arrière et vérifie que la liste est vide
          pressBack();
+        onView(isRoot()).perform(waitFor(500));
 
         onView(ViewMatchers.withId(R.id.list_favorite_neighbours)).check(withItemCount(0));
-
-
         }
 
 
