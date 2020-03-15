@@ -24,6 +24,7 @@ import javax.security.auth.login.LoginException;
 
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.Espresso.pressBack;
+import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.assertThat;
 import static android.support.test.espresso.matcher.ViewMatchers.hasChildCount;
@@ -105,6 +106,9 @@ public class NeighboursListTest {
 
     @Test
     public void myNeighbourListClickDelete () {
+        // On vérifie que la liste des favoris est vide
+        onView(ViewMatchers.withId(R.id.list_favorite_neighbours))
+                .check(withItemCount(0));
 
         // On clique sur le 1er voisin en position 0
         onView(ViewMatchers.withId(R.id.list_neighbours))
@@ -115,36 +119,39 @@ public class NeighboursListTest {
                 .check(matches(withText("Caroline")));
 
         // On clique sur le bouton d'ajout aux favoris
-        onView(withId(R.id.add_favorite_star)
-                .perform(ScrollToAction().click());
+        onView(withId(R.id.add_favorite_star))
+                .perform(click());
 
         // On vérifie la couleur de l'étoile est bien jaune car ajouté aux favoris
-        onView(withId(R.id.add_favorite_star))
-                .check(matches(ImageView(R.drawable.ic_star_yellow_24dp)));
+      /*  onView(withId(R.id.add_favorite_star))
+                .check(matches(ImageView(R.drawable.ic_star_yellow_24dp)));*/
 
         // On clique sur retour en arrière
         pressBack();
 
         // On reclique sur l'onglet favorites
-        onView(ViewMatchers.withId(R.id.tabItem2))
-                .perform(new ClickViewAction ());
+      /*  onView(ViewMatchers.withId(R.id.tabItem2))
+                .perform(new ClickViewAction ());*/
 
-        // On clique sur le voisin qui s'y trouve
-        onView(withId(R.id.list_favorite_neighbours))
-            .perform(new ClickViewAction ());
+
+        onView(ViewMatchers.withId(R.id.list_favorite_neighbours)).check(withItemCount(1));
+
+        // On clique sur le 1er élement de la liste voisin qui s'y trouve
+       /* onView(ViewMatchers.withId(R.id.list_favorite_neighbours))
+                .perform(RecyclerViewActions.actionOnItemAtPosition(0, new ClickViewAction()));*/
 
         // On clique sur l'étoile
-        onView(withId(R.id.add_favorite_star)
-                .perform(click());
+       /* onView(withId(R.id.add_favorite_star))
+                .perform(click());*/
 
         // On vérifie que son état a changé - couleur noire
-        onView(withId(R.id.add_favorite_star))
-                .check(matches(ImageView(R.drawable.ic_star_border_black_24dp));
+       /* onView(withId(R.id.add_favorite_star))
+                .check(matches(ImageView(R.drawable.ic_star_border_black_24dp));*/
 
         // On revient en arrière et vérifie que la liste est vide
-        pressBack();
+      //  pressBack();
 
-
+        onView(ViewMatchers.withId(R.id.list_favorite_neighbours)).check(withItemCount(0));
 /*
 
         // On clique sur le 1er voisin
