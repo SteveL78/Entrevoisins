@@ -73,9 +73,6 @@ public class PersonActivity extends AppCompatActivity {
 
 
         if (getIntent().getExtras() != null) {
-            /*id=getIntent().getExtras().getInt("id");
-            name = getIntent().getExtras().getString("name");
-            avatarUrl = getIntent().getExtras().getString("avatar");*/
             mNeighbour = (Neighbour) getIntent().getExtras().getSerializable("neighbour");
 
             mNameProfil.setText(mNeighbour.getName());
@@ -96,7 +93,6 @@ public class PersonActivity extends AppCompatActivity {
 
             avatarUrl = getIntent().getExtras().getString("fbAdress");
             mFacebookEmail.setText(mNeighbour.getFbAdress());
-
         }
 
 
@@ -122,9 +118,7 @@ public class PersonActivity extends AppCompatActivity {
                 }
             }
         });
-
     }
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -132,6 +126,5 @@ public class PersonActivity extends AppCompatActivity {
             finish();
         }
         return super.onOptionsItemSelected(item);
-
     }
 }

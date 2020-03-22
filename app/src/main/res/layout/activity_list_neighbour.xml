@@ -9,7 +9,7 @@
     android:fitsSystemWindows="true"
     tools:context=".ui.neighbour_list.ListNeighbourActivity">
 
-    // conteneur et design général du menu
+    <!-- conteneur et design général du menu -->
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar"
         android:layout_width="match_parent"
@@ -17,7 +17,7 @@
         android:paddingTop="8dp"
         android:theme="@style/AppTheme.AppBarOverlay">
 
-        // personnalisation de la barre d'outils
+        <!-- personnalisation de la barre d'outils -->
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
@@ -30,7 +30,7 @@
 
         </android.support.v7.widget.Toolbar>
 
-        // création du conteneur onglets
+        <!-- création du conteneur onglets -->
 
         <android.support.design.widget.TabLayout
             android:id="@+id/tabs"
@@ -38,7 +38,7 @@
             android:layout_height="wrap_content"
             app:tabIndicatorHeight="3dp">
 
-            // ajout de l'onglet "my neighbours"
+            <!-- ajout de l'onglet "my neighbours" -->
 
             <android.support.design.widget.TabItem
                 android:id="@+id/tabItem"
@@ -46,7 +46,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/tab_neighbour_title" />
 
-            // ajout de l'onglet "favorites"
+            <!-- ajout de l'onglet "favorites" -->
 
             <android.support.design.widget.TabItem
                 android:id="@+id/tabItem2"
@@ -57,7 +57,7 @@
         </android.support.design.widget.TabLayout>
     </android.support.design.widget.AppBarLayout>
 
-    // affichage des données avec le swipe ou le scroll
+    <!--  affichage des données avec le swipe ou le scroll -->
     <android.support.v4.view.ViewPager
         android:id="@+id/container"
         android:layout_width="match_parent"

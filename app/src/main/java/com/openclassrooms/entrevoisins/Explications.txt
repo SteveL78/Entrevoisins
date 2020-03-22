@@ -9,7 +9,7 @@ Une activity représente un écran. Soit elle affiche directement les éléments
 
 -> Les fragments: NeighbourFragment qui affiche la liste des voisins.
 Pour afficher une liste on utilise la plupart du temps un recyclerView.
-Un recyclerView à besoin d'un adapter qui indique comment afficher une ligne de la liste
+Un recyclerView a besoin d'un adapter qui indique comment afficher une ligne de la liste
 
 -> ViewPager qui permet de scroller de droite à gauche plusieurs écrans. Ainsi un viewPager va contenir plusieurs fragments.
 Pour fonctionner le viewPager doit avoir un adapter (ici ListNeighbourPagerAdapter) afin de dire comment afficher chaque écran à telle position.
@@ -43,4 +43,4 @@ ListNeighbourActivity
 
 DummyNeighbourApiService -----Récupère les infos depuis ----> DummyNeighbourGenerator
 |
-|----------> Fournit la liste des Neighbour à la demande
+|----------> Fourni la liste des Neighbour à la demande

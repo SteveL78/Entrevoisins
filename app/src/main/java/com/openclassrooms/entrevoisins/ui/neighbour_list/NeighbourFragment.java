@@ -1,10 +1,8 @@
 package com.openclassrooms.entrevoisins.ui.neighbour_list;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.Person;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -15,8 +13,6 @@ import android.view.ViewGroup;
 import com.openclassrooms.entrevoisins.R;
 import com.openclassrooms.entrevoisins.di.DI;
 import com.openclassrooms.entrevoisins.events.DeleteNeighbourEvent;
-import com.openclassrooms.entrevoisins.events.OpenFavoriteNeighbourEvent;
-import com.openclassrooms.entrevoisins.events.OpenNeighbourEvent;
 import com.openclassrooms.entrevoisins.model.Neighbour;
 import com.openclassrooms.entrevoisins.service.NeighbourApiService;
 
@@ -61,8 +57,7 @@ public class NeighbourFragment extends Fragment {
         View view = null;
         if (showFavoriteOnly) {
             view = inflater.inflate(R.layout.fragment_favorite_neighbour_list, container, false);
-        }
-        else {
+        } else {
             view = inflater.inflate(R.layout.fragment_neighbour_list, container, false);
         }
 
@@ -73,10 +68,11 @@ public class NeighbourFragment extends Fragment {
         initList();
         return view;
 
-      }
+    }
 
     /**
      * Init the List of neighbours
+     * EventBus permet de surveiller le flux de données et de notifier les personnes inscrite à cet évènement d'une modification (ajout ou suppression par exemple) - writer ou lecteur
      */
     private void initList() {
         mNeighbours = mApiService.getNeighbours();
@@ -104,7 +100,7 @@ public class NeighbourFragment extends Fragment {
 
     /**
      * Fired if the user clicks on a delete button
-     *
+     * Envoi un évènement si un voisin est supprimé et remet à jour la liste de Neighbour
      * @param event
      */
     @Subscribe

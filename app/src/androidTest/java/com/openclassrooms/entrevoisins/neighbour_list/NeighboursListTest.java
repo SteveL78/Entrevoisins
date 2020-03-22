@@ -87,6 +87,9 @@ public class NeighboursListTest {
         onView(ViewMatchers.withId(R.id.list_neighbours)).check(withItemCount(ITEMS_COUNT-1));
     }
 
+    /**
+     * We ensure that the neighboring file opens well
+     */
     @Test
     public void shouldOpenPersonActivity() {
         // On clique sur le 1er de la liste de MyNeighbours
@@ -97,6 +100,9 @@ public class NeighboursListTest {
                 .check(matches(isDisplayed()));
     }
 
+    /**
+     *  We ensure that the neighbour displayed is the 1st on the list
+     */
     @Test
     public void shouldDisplayNeighbourName() {
         // On clique sur le 1er de la liste de MyNeighbours
@@ -107,6 +113,9 @@ public class NeighboursListTest {
                 .check(matches(withText("Caroline")));
     }
 
+    /**
+     *  We ensure that the neighbor is deleted from the list_favorites_neighbours
+     */
     @Test
     public void checkFavorites() {
         // On vérifie que la liste des favoris est vide

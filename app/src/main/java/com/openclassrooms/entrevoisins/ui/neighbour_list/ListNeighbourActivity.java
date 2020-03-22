@@ -48,11 +48,12 @@ public class ListNeighbourActivity extends AppCompatActivity {
      */
     @Subscribe
     public void openNeighbour(OpenNeighbourEvent event) {
+        // On ouvre une nouvelle activité (=PersonActivity) quand on clique sur un voisin de la liste
           Intent intent = new Intent(this, PersonActivity.class);
             intent.putExtra("neighbour", event.neighbour);
             startActivity(intent);
-
     }
+
     @Override
     public void onStart() {
         super.onStart();

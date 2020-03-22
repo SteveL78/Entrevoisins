@@ -16,34 +16,34 @@ public interface NeighbourApiService {
      * Get all my Neighbours
      * @return {@link List}
      */
-    List<Neighbour> getNeighbours();
+    List<Neighbour> getNeighbours();   // renvoie neighbour
 
     /**
      * Deletes a neighbour
      * @param neighbour
      */
-    void deleteNeighbour(Neighbour neighbour);
+    void deleteNeighbour(Neighbour neighbour);  // supprime le neighbour
 
 
     /**
      * Add neighbour
      */
-    void addNeighbour(Neighbour neighbour);
+    void addNeighbour(Neighbour neighbour);     // ajoute un neigbour
 
 
     /**
      * Add to favorite
      */
-    void addFavorite (Neighbour neighbour);
+    void addFavorite (Neighbour neighbour);     // ajoute un neighbour aux favoris
 
 
     /**
      * Remove for favorite
      */
-    void removeFavorite (Neighbour neighbour);
+    void removeFavorite (Neighbour neighbour);          // supprime un neighbour des favoris
 
 
-    List<Neighbour> getFavoriteNeighbours();
+    List<Neighbour> getFavoriteNeighbours();        // renvoie la liste de neigbours favoris
 
 }
 

@@ -4,7 +4,10 @@ import com.openclassrooms.entrevoisins.model.Neighbour;
 
 /**
  * Created by Steve LEROY on 2019-11-05.
+ * Event fired when a user open a Neighbour
+ * On signale donc qu'on ouvre un nouveau voisin
  */
+
 public class OpenNeighbourEvent {
 
     /**

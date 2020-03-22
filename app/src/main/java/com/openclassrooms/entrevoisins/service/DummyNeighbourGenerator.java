@@ -8,6 +8,7 @@ import java.util.List;
 
 public abstract class DummyNeighbourGenerator {
 
+    // Création de la liste des voisins avec informations devant s'afficher dans sa fiche
     public static List<Neighbour> DUMMY_NEIGHBOURS = Arrays.asList(
             new Neighbour(1, "Caroline", "http://i.pravatar.cc/150?u=a042581f4e29026704d", "06 05 12 20 65", "Paris", "Sed cautela nimia in peiores haeserat plagas, ut narrabimus postea, aemulis consarcinantibus insidias graves. Provincias amnis mare Gnaeus Orontes abstractas Tigrane praetermeans. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.","www.facebook.fr/caroline"),
             new Neighbour(2, "Jack", "http://i.pravatar.cc/150?u=a042581f4e29026704e", "06 25 36 45 69", "Lille", "Hac ex causa conlaticia stipe Valerius humatur ille Publicola et subsidiis amicorum mariti. Mentitum neque utrumque utrumque ego. Nec firmare nostri abscisa ad.","www.facebook.fr/jack"),
@@ -23,6 +24,7 @@ public abstract class DummyNeighbourGenerator {
             new Neighbour(12, "Ludovic", "http://i.pravatar.cc/150?u=a042581f3e39026702d", "06 78 06 75 94", "Strasbourg", "Sed si ille hac tam eximia fortuna propter utilitatem rei publicae frui non properat, ut omnia illa conficiat ? Et eminebat periculorum obterens per scilicet multa crimina Hispania Constanti.","www.facebook.fr/ludovic")
     );
 
+    // Génère une liste à partir des voisins créés
     static List<Neighbour> generateNeighbours() {
         return new ArrayList<>(DUMMY_NEIGHBOURS);
     }
