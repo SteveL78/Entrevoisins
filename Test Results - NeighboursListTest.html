@@ -2,7 +2,7 @@
 <html xmlns:str="http://exslt.org/strings" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Test Results &mdash; UserListInstrumented...</title>
+<title>Test Results &mdash; NeighboursListTest</title>
 <style type="text/css">
           html {
             height: 100%
@@ -572,8 +572,8 @@ jQuery.cookie = function(name, value, options) {
 <body>
 <div id="container">
 <div id="header">
-<div class="time" xmlns="">7.01 s</div>
-<h1>UserListInstrumented...: <strong><span class="total" xmlns="http://www.w3.org/1999/xhtml">3 total, </span><span class="passed">3 passed</span></strong>
+<div class="time" xmlns="">5.24 s</div>
+<h1>NeighboursListTest: <strong><span class="total" xmlns="http://www.w3.org/1999/xhtml">5 total, </span><span class="passed">5 passed</span></strong>
 </h1>
 <div id="treecontrol">
 <ul>
@@ -591,137 +591,38 @@ jQuery.cookie = function(name, value, options) {
 <ul id="tree">
 <li xmlns="" class="level top open">
 <span><em class="time">
-<div class="time">7.01 s</div>
-</em>com.openclassrooms.magicgithub.UserListInstrumentedTest</span>
+<div class="time">5.24 s</div>
+</em>com.openclassrooms.entrevoisins.neighbour_list.NeighboursListTest</span>
 <ul>
 <li class="level test">
 <span><em class="time">
-<div class="time">1.99 s</div>
-</em><em class="status">passed</em>checkIfRemovingUserIsWorking</span>
+<div class="time">418 ms</div>
+</em><em class="status">passed</em>shouldDisplayNeighbourName</span>
+</li>
+<li class="level test">
+<span><em class="time">
+<div class="time">162 ms</div>
+</em><em class="status">passed</em>myNeighboursList_shouldNotBeEmpty</span>
+</li>
+<li class="level test">
+<span><em class="time">
+<div class="time">4.27 s</div>
+</em><em class="status">passed</em>checkFavorites</span>
 <ul>
 <li class="text">
-<span class="stdout">I/MonitoringInstr: Activities that are still in CREATED to STOPPED: 0<br/></span>
-</li>
-<li class="text">
-<span class="stdout">W/ActivityTestRule: getActivityIntent() returned null using default: Intent(Intent.ACTION_MAIN)<br/></span>
-</li>
-<li class="text">
-<span class="stdout">D/LifecycleMonitor: Lifecycle status change: com.openclassrooms.magicgithub.ui.user_list.ListUserActivity@4c3d4e0 in: PRE_ON_CREATE<br/></span>
-</li>
-<li class="text">
-<span class="stdout">W/art: Before Android 4.1, method android.graphics.PorterDuffColorFilter androidx.vectordrawable.graphics.drawable.VectorDrawableCompat.updateTintFilter(android.graphics.PorterDuffColorFilter, android.content.res.ColorStateList, android.graphics.PorterDuff$Mode) would have incorrectly overridden the package-private method in android.graphics.drawable.Drawable<br/></span>
-</li>
-<li class="text">
-<span class="stdout">I/art: Rejecting re-init on previously-failed class java.lang.Class&lt;androidx.core.view.ViewCompat$OnUnhandledKeyEventListenerWrapper&gt;: java.lang.NoClassDefFoundError: Failed resolution of: Landroid/view/View$OnUnhandledKeyEventListener;<br/>        at void androidx.core.view.ViewCompat.setBackground(android.view.View, android.graphics.drawable.Drawable) (ViewCompat.java:2341)<br/>        at void androidx.appcompat.widget.ActionBarContainer.&lt;init&gt;(android.content.Context, android.util.AttributeSet) (ActionBarContainer.java:62)<br/>        at java.lang.Object java.lang.reflect.Constructor.newInstance0!(java.lang.Object[]) (Constructor.java:-2)<br/>        at java.lang.Object java.lang.reflect.Constructor.newInstance(java.lang.Object[]) (Constructor.java:430)<br/>        at android.view.View android.view.LayoutInflater.createView(java.lang.String, java.lang.String, android.util.AttributeSet) (LayoutInflater.java:645)<br/>        at android.view.View android.view.LayoutInflater.createViewFromTag(android.view.View, java.lang.String, android.content.Context, android.util.AttributeSet, boolean) (LayoutInflater.java:787)<br/>        at android.view.View android.view.LayoutInflater.createViewFromTag(android.view.View, java.lang.String, android.content.Context, android.util.AttributeSet) (LayoutInflater.java:727)<br/>        at void android.view.LayoutInflater.rInflate(org.xmlpull.v1.XmlPullParser, android.view.View, android.content.Context, android.util.AttributeSet, boolean) (LayoutInflater.java:858)<br/>        at void android.view.LayoutInflater.rInflateChildren(org.xmlpull.v1.XmlPullParser, android.view.View, android.util.AttributeSet, boolean) (LayoutInflater.java:821)<br/>        at android.view.View android.view.LayoutInflater.inflate(org.xmlpull.v1.XmlPullParser, android.view.ViewGroup, boolean) (LayoutInflater.java:518)<br/>        at android.view.View android.view.LayoutInflater.inflate(int, android.view.ViewGroup, boolean) (LayoutInflater.java:426)<br/>        at android.view.View android.view.LayoutInflater.inflate(int, android.view.ViewGroup) (LayoutInflater.java:377)<br/>        at android.view.ViewGroup androidx.appcompat.app.AppCompatDelegateImpl.createSubDecor() (AppCompatDelegateImpl.java:607)<br/>        at void androidx.appcompat.app.AppCompatDelegateImpl.ensureSubDecor() (AppCompatDelegateImpl.java:518)<br/>        at void androidx.appcompat.app.AppCompatDelegateImpl.setContentView(int) (AppCompatDelegateImpl.java:466)<br/>        at void androidx.appcompat.app.AppCompatActivity.setContentView(int) (AppCompatActivity.java:140)<br/>        at void com.openclassrooms.magicgithub.ui.user_list.ListUserActivity.onCreate(android.os.Bundle) (ListUserActivity.java:28)<br/>        at void android.app.Activity.performCreate(android.os.Bundle) (Activity.java:6662)<br/>        at void android.app.Instrumentation.callActivityOnCreate(android.app.Activity, android.os.Bundle) (Instrumentation.java:1118)<br/>        at void androidx.test.runner.MonitoringInstrumentation.callActivityOnCreate(android.app.Activity, android.os.Bundle) (MonitoringInstrumentation.java:674)<br/>        at android.app.Activity android.app.ActivityThread.performLaunchActivity(android.app.ActivityThread$ActivityClientRecord, android.content.Intent) (ActivityThread.java:2599)<br/>        at void android.app.ActivityThread.handleLaunchActivity(android.app.ActivityThread$ActivityClientRecord, android.content.Intent, java.lang.String) (ActivityThread.java:2707)<br/>        at void android.app.ActivityThread.-wrap12(android.app.ActivityThread, android.app.ActivityThread$ActivityClientRecord, android.content.Intent, java.lang.String) (ActivityThread.java:-1)<br/>        at void android.app.ActivityThread$H.handleMessage(android.os.Message) (ActivityThread.java:1460)<br/>        at void android.os.Handler.dispatchMessage(android.os.Message) (Handler.java:102)<br/>        at void android.os.Looper.loop() (Looper.java:154)<br/>        at void android.app.ActivityThread.main(java.lang.String[]) (ActivityThread.java:6077)<br/>        at java.lang.Object java.lang.reflect.Method.invoke!(java.lang.Object, java.lang.Object[]) (Method.java:-2)<br/>        at void com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run() (ZygoteInit.java:866)<br/>        at void com.android.internal.os.ZygoteInit.main(java.lang.String[]) (ZygoteInit.java:756)<br/>    Caused by: java.lang.ClassNotFoundException: Didn&#39;t find class &quot;android.view.View$OnUnhandledKeyEventListener&quot; on path: DexPathList[[zip file &quot;/system/framework/android.test.runner.jar&quot;, zip file &quot;/data/app/com.openclassrooms.magicgithub.test-1/base.apk&quot;, zip file &quot;/data/app/com.openclassrooms.magicgithub-1/base.apk&quot;],nativeLibraryDirectories=[/data/app/com.openclassrooms.magicgithub.test-1/lib/x86, /data/app/com.openclassrooms.magicgithub-1/lib/x86, /system/lib, /vendor/lib]]<br/>        at java.lang.Class dalvik.system.BaseDexClassLoader.findClass(java.lang.String) (BaseDexClassLoader.java:56)<br/>        at java.lang.Class java.lang.ClassLoader.loadClass(java.lang.String, boolean) (ClassLoader.java:380)<br/>        at java.lang.Class java.lang.ClassLoader.loadClass(java.lang.String) (ClassLoader.java:312)<br/>        at void androidx.core.view.ViewCompat.setBackground(android.view.View, android.graphics.drawable.Drawable) (ViewCompat.java:2341)<br/>        at void androidx.appcompat.widget.ActionBarContainer.&lt;init&gt;(android.content.Context, android.util.AttributeSet) (ActionBarContainer.java:62)<br/>        at java.lang.Object java.lang.reflect.Constructor.newInstance0!(java.lang.Object[]) (Constructor.java:-2)<br/>        at java.lang.Object java.lang.reflect.Constructor.newInstance(java.lang.Object[]) (Constructor.java:430)<br/>        at android.view.View android.view.LayoutInflater.createView(java.lang.String, java.lang.String, android.util.AttributeSet) (LayoutInflater.java:645)<br/>        at android.view.View android.view.LayoutInflater.createViewFromTag(android.view.View, java.lang.String, android.content.Context, android.util.AttributeSet, boolean) (LayoutInflater.java:787)<br/>        at android.view.View android.view.LayoutInflater.createViewFromTag(android.view.View, java.lang.String, android.content.Context, android.util.AttributeSet) (LayoutInflater.java:727)<br/>        at void android.view.LayoutInflater.rInflate(org.xmlpull.v1.XmlPullParser, android.view.View, android.content.Context, android.util.AttributeSet, boolean) (LayoutInflater.java:858)<br/>I/art:     at void android.view.LayoutInflater.rInflateChildren(org.xmlpull.v1.XmlPullParser, android.view.View, android.util.AttributeSet, boolean) (LayoutInflater.java:821)<br/>        at android.view.View android.view.LayoutInflater.inflate(org.xmlpull.v1.XmlPullParser, android.view.ViewGroup, boolean) (LayoutInflater.java:518)<br/>        at android.view.View android.view.LayoutInflater.inflate(int, android.view.ViewGroup, boolean) (LayoutInflater.java:426)<br/>        at android.view.View android.view.LayoutInflater.inflate(int, android.view.ViewGroup) (LayoutInflater.java:377)<br/>        at android.view.ViewGroup androidx.appcompat.app.AppCompatDelegateImpl.createSubDecor() (AppCompatDelegateImpl.java:607)<br/>        at void androidx.appcompat.app.AppCompatDelegateImpl.ensureSubDecor() (AppCompatDelegateImpl.java:518)<br/>        at void androidx.appcompat.app.AppCompatDelegateImpl.setContentView(int) (AppCompatDelegateImpl.java:466)<br/>        at void androidx.appcompat.app.AppCompatActivity.setContentView(int) (AppCompatActivity.java:140)<br/>        at void com.openclassrooms.magicgithub.ui.user_list.ListUserActivity.onCreate(android.os.Bundle) (ListUserActivity.java:28)<br/>        at void android.app.Activity.performCreate(android.os.Bundle) (Activity.java:6662)<br/>        at void android.app.Instrumentation.callActivityOnCreate(android.app.Activity, android.os.Bundle) (Instrumentation.java:1118)<br/>        at void androidx.test.runner.MonitoringInstrumentation.callActivityOnCreate(android.app.Activity, android.os.Bundle) (MonitoringInstrumentation.java:674)<br/>        at android.app.Activity android.app.ActivityThread.performLaunchActivity(android.app.ActivityThread$ActivityClientRecord, android.content.Intent) (ActivityThread.java:2599)<br/>        at void android.app.ActivityThread.handleLaunchActivity(android.app.ActivityThread$ActivityClientRecord, android.content.Intent, java.lang.String) (ActivityThread.java:2707)<br/>        at void android.app.ActivityThread.-wrap12(android.app.ActivityThread, android.app.ActivityThread$ActivityClientRecord, android.content.Intent, java.lang.String) (ActivityThread.java:-1)<br/>        at void android.app.ActivityThread$H.handleMessage(android.os.Message) (ActivityThread.java:1460)<br/>        at void android.os.Handler.dispatchMessage(android.os.Message) (Handler.java:102)<br/>        at void android.os.Looper.loop() (Looper.java:154)<br/>        at void android.app.ActivityThread.main(java.lang.String[]) (ActivityThread.java:6077)<br/>        at java.lang.Object java.lang.reflect.Method.invoke!(java.lang.Object, java.lang.Object[]) (Method.java:-2)<br/>        at void com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run() (ZygoteInit.java:866)<br/>        at void com.android.internal.os.ZygoteInit.main(java.lang.String[]) (ZygoteInit.java:756)<br/></span>
-</li>
-<li class="text">
-<span class="stdout">D/LifecycleMonitor: Lifecycle status change: com.openclassrooms.magicgithub.ui.user_list.ListUserActivity@4c3d4e0 in: CREATED<br/>    Lifecycle status change: com.openclassrooms.magicgithub.ui.user_list.ListUserActivity@4c3d4e0 in: STARTED<br/>D/LifecycleMonitor: Lifecycle status change: com.openclassrooms.magicgithub.ui.user_list.ListUserActivity@4c3d4e0 in: RESUMED<br/>D/: HostConnection::get() New Host Connection established 0x9e315b80, tid 7537<br/>D/: HostConnection::get() New Host Connection established 0x9e315e80, tid 7576<br/></span>
-</li>
-<li class="text">
-<span class="stdout">I/OpenGLRenderer: Initialized EGL, version 1.4<br/></span>
-</li>
-<li class="text">
-<span class="stdout">D/OpenGLRenderer: Swap behavior 1<br/></span>
-</li>
-<li class="text">
-<span class="stdout">W/OpenGLRenderer: Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without...<br/></span>
-</li>
-<li class="text">
-<span class="stdout">D/OpenGLRenderer: Swap behavior 0<br/>D/EGL_emulation: eglCreateContext: 0x9e32d920: maj 2 min 0 rcv 2<br/>D/EGL_emulation: eglMakeCurrent: 0x9e32d920: ver 2 0 (tinfo 0x9e3319e0)<br/></span>
-</li>
-<li class="text">
-<span class="stdout">W/Glide: Failed to find GeneratedAppGlideModule. You should include an annotationProcessor compile dependency on com.github.bumptech.glide:compiler in your application and a @GlideModule annotated AppGlideModule implementation or LibraryGlideModules will be silently ignored<br/></span>
-</li>
-<li class="text">
-<span class="stdout">D/EGL_emulation: eglMakeCurrent: 0x9e32d920: ver 2 0 (tinfo 0x9e3319e0)<br/></span>
-</li>
-<li class="text">
-<span class="stdout">I/art: Do partial code cache collection, code=30KB, data=31KB<br/>    After code cache collection, code=30KB, data=30KB<br/>    Increasing code cache capacity to 128KB<br/>I/Choreographer: Skipped 30 frames!  The application may be doing too much work on its main thread.<br/>I/art: Do partial code cache collection, code=61KB, data=57KB<br/>I/art: After code cache collection, code=61KB, data=57KB<br/>    Increasing code cache capacity to 256KB<br/></span>
-</li>
-<li class="text">
-<span class="stdout">D/InputManagerEventInjectionStrategy: Creating injection strategy with input manager.<br/></span>
-</li>
-<li class="text">
-<span class="stdout">I/ViewInteraction: Performing &#39;actionOnItemAtPosition performing ViewAction: Click on a child view with specified id. on item at position: 0&#39; action on view with id: com.openclassrooms.magicgithub:id/activity_list_user_rv<br/></span>
-</li>
-<li class="text">
-<span class="stdout">D/com.openclassrooms.magicgithub.ui.user_list.ListUserActivity: User tries to delete a item.<br/></span>
-</li>
-<li class="text">
-<span class="stdout">I/ViewInteraction: Checking &#39;com.openclassrooms.magicgithub.utils.RecyclerViewUtils$ItemCount@aa9b764&#39; assertion on view with id: com.openclassrooms.magicgithub:id/activity_list_user_rv<br/></span>
-</li>
-<li class="text">
-<span class="stdout">D/LifecycleMonitor: Lifecycle status change: com.openclassrooms.magicgithub.ui.user_list.ListUserActivity@4c3d4e0 in: PAUSED<br/>    running callback: androidx.test.rule.ActivityTestRule$LifecycleCallback@b7bbdcd<br/>    callback completes: androidx.test.rule.ActivityTestRule$LifecycleCallback@b7bbdcd<br/></span>
-</li>
-<li class="text">
-<span class="stdout">I/TestRunner: finished: checkIfRemovingUserIsWorking(com.openclassrooms.magicgithub.UserListInstrumentedTest)<br/></span>
+<span class="stdout">Connected to process 27428 on device &#39;emulator-5554&#39;.<br/></span>
 </li>
 </ul>
 </li>
 <li class="level test">
 <span><em class="time">
-<div class="time">1.85 s</div>
-</em><em class="status">passed</em>checkIfAddingRandomUserIsWorking</span>
-<ul>
-<li class="text">
-<span class="stdout">I/TestRunner: started: checkIfAddingRandomUserIsWorking(com.openclassrooms.magicgithub.UserListInstrumentedTest)<br/>I/MonitoringInstr: Activities that are still in CREATED to STOPPED: 0<br/></span>
-</li>
-<li class="text">
-<span class="stdout">W/ActivityTestRule: getActivityIntent() returned null using default: Intent(Intent.ACTION_MAIN)<br/></span>
-</li>
-<li class="text">
-<span class="stdout">D/LifecycleMonitor: Lifecycle status change: com.openclassrooms.magicgithub.ui.user_list.ListUserActivity@691e1e7 in: PRE_ON_CREATE<br/>D/LifecycleMonitor: Lifecycle status change: com.openclassrooms.magicgithub.ui.user_list.ListUserActivity@691e1e7 in: CREATED<br/>    Lifecycle status change: com.openclassrooms.magicgithub.ui.user_list.ListUserActivity@691e1e7 in: STARTED<br/>    Lifecycle status change: com.openclassrooms.magicgithub.ui.user_list.ListUserActivity@691e1e7 in: RESUMED<br/>D/EGL_emulation: eglMakeCurrent: 0x9e32d920: ver 2 0 (tinfo 0x9e3319e0)<br/></span>
-</li>
-<li class="text">
-<span class="stdout">I/ViewInteraction: Performing &#39;single click&#39; action on view with id: com.openclassrooms.magicgithub:id/activity_list_user_fab<br/>I/ViewInteraction: Checking &#39;com.openclassrooms.magicgithub.utils.RecyclerViewUtils$ItemCount@83e48a3&#39; assertion on view with id: com.openclassrooms.magicgithub:id/activity_list_user_rv<br/>I/art: Do full code cache collection, code=124KB, data=105KB<br/>    After code cache collection, code=122KB, data=94KB<br/></span>
-</li>
-<li class="text">
-<span class="stdout">D/LifecycleMonitor: Lifecycle status change: com.openclassrooms.magicgithub.ui.user_list.ListUserActivity@691e1e7 in: PAUSED<br/>    running callback: androidx.test.rule.ActivityTestRule$LifecycleCallback@db8c7a0<br/>    callback completes: androidx.test.rule.ActivityTestRule$LifecycleCallback@db8c7a0<br/>D/EGL_emulation: eglMakeCurrent: 0x9e32d920: ver 2 0 (tinfo 0x9e3319e0)<br/></span>
-</li>
-<li class="text">
-<span class="stdout">I/TestRunner: finished: checkIfAddingRandomUserIsWorking(com.openclassrooms.magicgithub.UserListInstrumentedTest)<br/>I/MonitoringInstr: Activities that are still in CREATED to STOPPED: 1<br/>I/MonitoringInstr: Unstopped activity count: 1<br/></span>
-</li>
-<li class="text">
-<span class="stdout">D/LifecycleMonitor: Lifecycle status change: com.openclassrooms.magicgithub.ui.user_list.ListUserActivity@691e1e7 in: STOPPED<br/>D/LifecycleMonitor: Lifecycle status change: com.openclassrooms.magicgithub.ui.user_list.ListUserActivity@691e1e7 in: DESTROYED<br/></span>
-</li>
-</ul>
+<div class="time">193 ms</div>
+</em><em class="status">passed</em>myNeighboursList_deleteAction_shouldRemoveItem</span>
 </li>
 <li class="level test">
 <span><em class="time">
-<div class="time">3.16 s</div>
-</em><em class="status">passed</em>checkIfRecyclerViewIsNotEmpty</span>
-<ul>
-<li class="text">
-<span class="stdout">I/TestRunner: started: checkIfRecyclerViewIsNotEmpty(com.openclassrooms.magicgithub.UserListInstrumentedTest)<br/>I/MonitoringInstr: Activities that are still in CREATED to STOPPED: 0<br/></span>
-</li>
-<li class="text">
-<span class="stdout">W/ActivityTestRule: getActivityIntent() returned null using default: Intent(Intent.ACTION_MAIN)<br/></span>
-</li>
-<li class="text">
-<span class="stdout">D/LifecycleMonitor: Lifecycle status change: com.openclassrooms.magicgithub.ui.user_list.ListUserActivity@6772815 in: PRE_ON_CREATE<br/>D/LifecycleMonitor: Lifecycle status change: com.openclassrooms.magicgithub.ui.user_list.ListUserActivity@6772815 in: CREATED<br/>    Lifecycle status change: com.openclassrooms.magicgithub.ui.user_list.ListUserActivity@6772815 in: STARTED<br/>D/LifecycleMonitor: Lifecycle status change: com.openclassrooms.magicgithub.ui.user_list.ListUserActivity@6772815 in: RESUMED<br/></span>
-</li>
-<li class="text">
-<span class="stdout">I/art: Do partial code cache collection, code=122KB, data=102KB<br/>    After code cache collection, code=122KB, data=102KB<br/>    Increasing code cache capacity to 512KB<br/></span>
-</li>
-<li class="text">
-<span class="stdout">D/EGL_emulation: eglMakeCurrent: 0x9e32d920: ver 2 0 (tinfo 0x9e3319e0)<br/></span>
-</li>
-<li class="text">
-<span class="stdout">I/ViewInteraction: Checking &#39;com.openclassrooms.magicgithub.utils.RecyclerViewUtils$ItemCount@e32de2b&#39; assertion on view with id: com.openclassrooms.magicgithub:id/activity_list_user_rv<br/></span>
-</li>
-<li class="text">
-<span class="stdout">D/LifecycleMonitor: Lifecycle status change: com.openclassrooms.magicgithub.ui.user_list.ListUserActivity@6772815 in: PAUSED<br/>    running callback: androidx.test.rule.ActivityTestRule$LifecycleCallback@b9be288<br/>    callback completes: androidx.test.rule.ActivityTestRule$LifecycleCallback@b9be288<br/></span>
-</li>
-<li class="text">
-<span class="stdout">I/Choreographer: Skipped 149 frames!  The application may be doing too much work on its main thread.<br/></span>
-</li>
-<li class="text">
-<span class="stdout">D/EGL_emulation: eglMakeCurrent: 0x9e32d920: ver 2 0 (tinfo 0x9e3319e0)<br/></span>
-</li>
-<li class="text">
-<span class="stdout">I/TestRunner: finished: checkIfRecyclerViewIsNotEmpty(com.openclassrooms.magicgithub.UserListInstrumentedTest)<br/>I/MonitoringInstr: Activities that are still in CREATED to STOPPED: 1<br/>I/MonitoringInstr: Unstopped activity count: 1<br/></span>
-</li>
-</ul>
+<div class="time">201 ms</div>
+</em><em class="status">passed</em>shouldOpenPersonActivity</span>
 </li>
 </ul>
 </li>
@@ -729,7 +630,7 @@ jQuery.cookie = function(name, value, options) {
 </div>
 </div>
 <div id="footer">
-<p>Generated by Android Studio on 1/26/20 7:53 AM</p>
+<p>Generated by Android Studio on 3/22/20 2:44 AM</p>
 </div>
 </body>
 </html>

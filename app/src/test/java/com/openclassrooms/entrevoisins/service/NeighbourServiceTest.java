@@ -45,17 +45,14 @@ public class NeighbourServiceTest {
     }
 
 
-
-
     // Ajouter un utilisateur
 
     @Test
     public void addNeighbourWithSuccess() {
-        Neighbour favoriteNeighbourToAdd = new Neighbour(128, "Chakir","http://monavatar.com", "0612345678","Montpellier","developpeur Android","http://facebook.com");
+        Neighbour favoriteNeighbourToAdd = new Neighbour(128, "Chakir", "http://monavatar.com", "0612345678", "Montpellier", "developpeur Android", "http://facebook.com");
         service.addNeighbour(favoriteNeighbourToAdd);
         assertTrue(service.getNeighbours().contains(favoriteNeighbourToAdd));
     }
-
 
 
     // Ajouter un favori et vérifier s'il a bien été ajouté à la liste des favoris
@@ -73,7 +70,7 @@ public class NeighbourServiceTest {
         Neighbour favoriteNeighbourToAdd = service.getNeighbours().get(0);
         service.addFavorite(favoriteNeighbourToAdd);
         List<Neighbour> favoritesNeighbours = service.getFavoriteNeighbours();
-        assertTrue(favoritesNeighbours.size()==1);
+        assertTrue(favoritesNeighbours.size() == 1);
     }
 
 

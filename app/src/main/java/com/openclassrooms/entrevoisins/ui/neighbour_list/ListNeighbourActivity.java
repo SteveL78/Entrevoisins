@@ -54,6 +54,7 @@ public class ListNeighbourActivity extends AppCompatActivity {
             startActivity(intent);
     }
 
+    // On s'enregistre auprès d'eventBus pour recevoir un évènement (onStart et onStop car cycle de vie de l'activité ou du fragment)
     @Override
     public void onStart() {
         super.onStart();

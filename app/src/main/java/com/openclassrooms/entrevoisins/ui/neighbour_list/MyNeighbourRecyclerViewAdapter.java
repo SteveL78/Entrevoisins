@@ -55,7 +55,7 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.fragment_neighbour, parent, false);
+                .inflate(R.layout.cell_neighbour, parent, false);
         return new ViewHolder(view);
     }
 
@@ -70,7 +70,9 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
                 .apply(RequestOptions.circleCropTransform())
                 .into(holder.mNeighbourAvatar);
 
-        // Quand on clique sur le bouton delete on diffuse un évènement précisant la suppression
+        /*
+        *  ------- BOUTON DELETE ---------
+        * Quand on clique sur le bouton delete on diffuse un évènement précisant la suppression*/
         holder.mDeleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -78,6 +80,7 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
 
             }
         });
+
 
         // Quand je clique sur toute la vue voilà ce qu'il se passe
         holder.mParentView.setOnClickListener(new View.OnClickListener() {

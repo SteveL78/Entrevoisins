@@ -47,6 +47,8 @@ public class DummyNeighbourApiService implements  NeighbourApiService {
     }
 
 
+    // Gestion des favoris (ajout / suppression et mise à jour)
+
     @Override
     public void addNeighbour(Neighbour neighbour) {neighbours.add(neighbour);}    // Ajouter un voisin
 

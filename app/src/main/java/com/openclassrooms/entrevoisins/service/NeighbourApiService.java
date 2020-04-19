@@ -43,7 +43,7 @@ public interface NeighbourApiService {
     void removeFavorite (Neighbour neighbour);          // supprime un neighbour des favoris
 
 
-    List<Neighbour> getFavoriteNeighbours();        // renvoie la liste de neigbours favoris
+    List<Neighbour> getFavoriteNeighbours();        // renvoie et met à jour la liste de neigbours favoris
 
 }
 

@@ -22,7 +22,7 @@ import org.greenrobot.eventbus.Subscribe;
 import java.util.List;
 
 
-public class NeighbourFragment extends Fragment {
+public class NeighbourListFragment extends Fragment {
 
     private NeighbourApiService mApiService;
     private List<Neighbour> mNeighbours;
@@ -34,10 +34,10 @@ public class NeighbourFragment extends Fragment {
     /**
      * Create and return a new instance
      *
-     * @return @{@link NeighbourFragment}
+     * @return @{@link NeighbourListFragment}
      */
-    public static NeighbourFragment newInstance(boolean showFavoriteOnly) {
-        NeighbourFragment fragment = new NeighbourFragment();
+    public static NeighbourListFragment newInstance(boolean showFavoriteOnly) {
+        NeighbourListFragment fragment = new NeighbourListFragment();
         Bundle args = new Bundle();
         args.putBoolean("favorites", showFavoriteOnly);
         fragment.setArguments(args);
