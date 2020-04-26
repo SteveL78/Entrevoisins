@@ -20,6 +20,7 @@ import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 
 import java.util.List;
+import java.util.Objects;
 
 
 public class NeighbourListFragment extends Fragment {
@@ -48,7 +49,7 @@ public class NeighbourListFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mApiService = DI.getNeighbourApiService();
-        showFavoriteOnly = getArguments().getBoolean("favorites");
+        showFavoriteOnly = Objects.requireNonNull(getArguments()).getBoolean("favorites");
     }
 
     @Override
@@ -75,8 +76,13 @@ public class NeighbourListFragment extends Fragment {
      * EventBus permet de surveiller le flux de données et de notifier les personnes inscrite à cet évènement d'une modification (ajout ou suppression par exemple) - writer ou lecteur
      */
     private void initList() {
-        mNeighbours = mApiService.getNeighbours();
+        if (showFavoriteOnly) {
+            mNeighbours = mApiService.getFavoriteNeighbours();
+        } else {
+            mNeighbours = mApiService.getNeighbours();
+        }
         mRecyclerView.setAdapter(new MyNeighbourRecyclerViewAdapter(mNeighbours, showFavoriteOnly));
+
     }
 
     @Override

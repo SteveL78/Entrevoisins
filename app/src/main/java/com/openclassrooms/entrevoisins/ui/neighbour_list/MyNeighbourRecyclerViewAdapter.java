@@ -40,14 +40,6 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
     public MyNeighbourRecyclerViewAdapter(List<Neighbour> items, boolean showFavoriteOnly) {
         mNeighbours = items;
         this.showFavoriteOnly = showFavoriteOnly;
-        if (showFavoriteOnly){
-            ArrayList<Neighbour> listTemp = new ArrayList<>();
-            for (Neighbour neighbour: mNeighbours) {
-                if (neighbour.isFavorite())
-                    listTemp.add(neighbour);
-            }
-            mNeighbours = listTemp;
-        }
     }
 
     /* OnCreateViewHolder permet de créer un ViewHolder à partir du layout xml représentant chaque ligne de la RecyclerView
@@ -59,19 +51,20 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
         return new ViewHolder(view);
     }
 
-    /* OnBindViewHolder est une méthode appelée pour chacune des lignes visibles dans notre RecyclerView
+    /* La fonction OnBindViewHolder permet de générer une cellule à partir d'un modèle
      * On y met à jour leur apparence (to bind = lier)*/
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         Neighbour neighbour = mNeighbours.get(position);            // Dans la liste de voisins on récupère un voisin à la position qui est donnée
         holder.mNeighbourName.setText(neighbour.getName());         // On affiche le nom du voisin à cette position à l'aide du .xml qui s'appelle neigbhourName.
-        Glide.with(holder.mNeighbourAvatar.getContext())        // On affiche une image d'une bibliothèque de manière asynchrone
+        Glide.with(holder.mNeighbourAvatar.getContext())        // On affiche une image d'une bibliothèque
                 .load(neighbour.getAvatarUrl())
                 .apply(RequestOptions.circleCropTransform())
                 .into(holder.mNeighbourAvatar);
 
         /*
         *  ------- BOUTON DELETE ---------
+        * On
         * Quand on clique sur le bouton delete on diffuse un évènement précisant la suppression*/
         holder.mDeleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
