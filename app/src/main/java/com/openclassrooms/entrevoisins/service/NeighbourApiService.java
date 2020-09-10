@@ -1,7 +1,5 @@
 package com.openclassrooms.entrevoisins.service;
 
-import android.content.Intent;
-
 import com.openclassrooms.entrevoisins.model.Neighbour;
 
 import java.util.List;
@@ -14,12 +12,14 @@ public interface NeighbourApiService {
 
     /**
      * Get all my Neighbours
+     *
      * @return {@link List}
      */
     List<Neighbour> getNeighbours();   // renvoie neighbour
 
     /**
      * Deletes a neighbour
+     *
      * @param neighbour
      */
     void deleteNeighbour(Neighbour neighbour);  // supprime le neighbour
@@ -34,13 +34,13 @@ public interface NeighbourApiService {
     /**
      * Add to favorite
      */
-    void addFavorite (Neighbour neighbour);     // ajoute un neighbour aux favoris
+    void addFavorite(Neighbour neighbour);     // ajoute un neighbour aux favoris
 
 
     /**
      * Remove for favorite
      */
-    void removeFavorite (Neighbour neighbour);          // supprime un neighbour des favoris
+    void removeFavorite(Neighbour neighbour);          // supprime un neighbour des favoris
 
 
     List<Neighbour> getFavoriteNeighbours();        // renvoie et met à jour la liste de neigbours favoris

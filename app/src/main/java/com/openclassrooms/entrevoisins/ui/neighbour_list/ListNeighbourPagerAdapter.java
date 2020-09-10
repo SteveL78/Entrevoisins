@@ -23,7 +23,7 @@ public class ListNeighbourPagerAdapter extends FragmentPagerAdapter {
 
     /**
      * get the number of pages
-     * @return : integer : retourne le nombre de pages du viewpage
+     * @return : integer : retourne le nombre de pages du viewpager
      */
     @Override
     public int getCount() {

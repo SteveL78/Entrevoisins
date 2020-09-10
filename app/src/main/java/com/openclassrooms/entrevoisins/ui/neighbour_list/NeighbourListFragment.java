@@ -81,8 +81,8 @@ public class NeighbourListFragment extends Fragment {
         } else {
             mNeighbours = mApiService.getNeighbours();
         }
-        mRecyclerView.setAdapter(new MyNeighbourRecyclerViewAdapter(mNeighbours, showFavoriteOnly));
-
+        MyNeighbourRecyclerViewAdapter myNeighbourRecyclerViewAdapter = new MyNeighbourRecyclerViewAdapter(mNeighbours, showFavoriteOnly);
+        mRecyclerView.setAdapter(myNeighbourRecyclerViewAdapter);
     }
 
     @Override

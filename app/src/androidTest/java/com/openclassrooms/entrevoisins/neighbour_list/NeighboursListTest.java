@@ -1,15 +1,11 @@
 
 package com.openclassrooms.entrevoisins.neighbour_list;
 
-import android.support.test.espresso.ViewAction;
-import android.support.test.espresso.action.ScrollToAction;
 import android.support.test.espresso.contrib.RecyclerViewActions;
 import android.support.test.espresso.contrib.ViewPagerActions;
 import android.support.test.espresso.matcher.ViewMatchers;
-import android.support.test.filters.LargeTest;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
-import android.widget.ImageView;
 
 import com.openclassrooms.entrevoisins.R;
 import com.openclassrooms.entrevoisins.ui.neighbour_list.ListNeighbourActivity;
@@ -21,24 +17,17 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import javax.security.auth.login.LoginException;
-
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.Espresso.pressBack;
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.assertThat;
-import static android.support.test.espresso.matcher.ViewMatchers.hasChildCount;
 import static android.support.test.espresso.matcher.ViewMatchers.hasMinimumChildCount;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
-import static android.support.test.espresso.matcher.ViewMatchers.isEnabled;
-import static android.support.test.espresso.matcher.ViewMatchers.isNotChecked;
-import static android.support.test.espresso.matcher.ViewMatchers.isRoot;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
 import static com.openclassrooms.entrevoisins.utils.RecyclerViewItemCountAssertion.withItemCount;
 import static org.hamcrest.core.IsNull.notNullValue;
-
 
 
 /**
@@ -83,7 +72,7 @@ public class NeighboursListTest {
         onView(ViewMatchers.withId(R.id.list_neighbours))
                 .perform(RecyclerViewActions.actionOnItemAtPosition(1, new DeleteViewAction()));
         // Then : the number of element is 11
-        onView(ViewMatchers.withId(R.id.list_neighbours)).check(withItemCount(ITEMS_COUNT-1));
+        onView(ViewMatchers.withId(R.id.list_neighbours)).check(withItemCount(ITEMS_COUNT - 1));
     }
 
     /**
@@ -100,7 +89,7 @@ public class NeighboursListTest {
     }
 
     /**
-     *  We ensure that the neighbour displayed is the 1st on the list
+     * We ensure that the neighbour displayed is the 1st on the list
      */
     @Test
     public void shouldDisplayNeighbourName() {
@@ -113,7 +102,7 @@ public class NeighboursListTest {
     }
 
     /**
-     *  We ensure that the neighbor is deleted from the list_favorites_neighbours
+     * We ensure that the neighbor is deleted from the list_favorites_neighbours
      */
     @Test
     public void checkFavorites() {
@@ -149,14 +138,14 @@ public class NeighboursListTest {
                 .perform(RecyclerViewActions.actionOnItemAtPosition(0, new ClickViewAction()));
 
         // On clique sur l'étoile
-       onView(withId(R.id.add_favorite_star))
+        onView(withId(R.id.add_favorite_star))
                 .perform(click());
 
         // On revient en arrière et vérifie que la liste est vide
         pressBack();
 
         onView(ViewMatchers.withId(R.id.list_favorite_neighbours)).check(withItemCount(0));
-        }
-
-
     }
+
+
+}

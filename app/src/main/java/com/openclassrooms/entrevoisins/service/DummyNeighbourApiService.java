@@ -1,7 +1,6 @@
 package com.openclassrooms.entrevoisins.service;
 
 import com.openclassrooms.entrevoisins.model.Neighbour;
-import com.openclassrooms.entrevoisins.ui.neighbour_list.ListNeighbourActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,10 +13,9 @@ import java.util.List;
 /**
  * Dummy mock for the Api
  */
-public class DummyNeighbourApiService implements  NeighbourApiService {
+public class DummyNeighbourApiService implements NeighbourApiService {
 
     private List<Neighbour> neighbours = DummyNeighbourGenerator.generateNeighbours(); // renvoie un voisin
-
 
     /**
      * {@inheritDoc}
@@ -36,10 +34,10 @@ public class DummyNeighbourApiService implements  NeighbourApiService {
     }
 
 // Mets à jour le voisin
-    public void updateNeighbour(Neighbour neighbour) {
+    private void updateNeighbour(Neighbour neighbour) {
         for (int i = 0; i < neighbours.size(); i++) {           // On fait le tour de la liste
             Neighbour neighbourTemp = neighbours.get(i);    // On fait défiler la liste tant qu'on obtient pas le voisin attendu
-            if (neighbour.equals(neighbourTemp) ){          // si le voisin orrespond à celui attendu alors on l'affiche
+            if (neighbour.equals(neighbourTemp) ){          // si le voisin correspond à celui attendu alors on l'insère
                 neighbours.set(i, neighbour);
                 break;
             }
@@ -72,6 +70,6 @@ public class DummyNeighbourApiService implements  NeighbourApiService {
                 favoriteNeighbours.add(neighbour);      // on le met à jour en tant que favori
             }
         }
-        return favoriteNeighbours;      // l'affiche en tant que favori
+        return favoriteNeighbours;      // on retourne la liste des voisins favoris
     }
 }
