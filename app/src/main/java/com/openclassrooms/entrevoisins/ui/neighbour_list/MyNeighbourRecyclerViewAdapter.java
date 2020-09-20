@@ -25,7 +25,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
-
 /*Permet de faire la liaison (Bind) entre la vue RecyclerView et la liste de données
  * L'adapter permet de contenir l'ensemble des données à afficher dans le RecyclerView
  * la classe MyNeighbourRecyclerViewAdapter étend la classe RecyclerView.Adapter<MyNeighbourRecyclerViewAdapter.ViewHolder>. Elle la redéfinie */
@@ -61,27 +60,30 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
                 .apply(RequestOptions.circleCropTransform())
                 .into(holder.mNeighbourAvatar);
 
-        /*
-        *  ------- BOUTON DELETE ---------
-        * On
-        * Quand on clique sur le bouton delete on diffuse un évènement précisant la suppression*/
-        holder.mDeleteButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-               if (!showFavoriteOnly) EventBus.getDefault().post(new DeleteNeighbourEvent(neighbour)); // EventBus est comme un bus dans lequel on peut mettre plein de choses avec d'un côté les lecteurs et les receveurs qui seront notifiés, s'ils s'y inscrivent, en cas de modification (ajout ou suppression)
-
-            }
-        });
-
-
+        
         // Quand je clique sur toute la vue voilà ce qu'il se passe
         holder.mParentView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //Toast.makeText(holder.mDeleteButton.getContext(), "click", Toast.LENGTH_SHORT).show();
-               EventBus.getDefault().post(new OpenNeighbourEvent(neighbour)); // ouvre le voisin
+                EventBus.getDefault().post(new OpenNeighbourEvent(neighbour)); // ouvre le voisin
             }
         });
+
+
+        /*
+         *  ------- BOUTON DELETE ---------
+         * On
+         * Quand on clique sur le bouton delete on diffuse un évènement précisant la suppression*/
+        holder.mDeleteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!showFavoriteOnly)
+                    EventBus.getDefault().post(new DeleteNeighbourEvent(neighbour)); // EventBus est comme un bus dans lequel on peut mettre plein de choses avec d'un côté les lecteurs et les receveurs qui seront notifiés, s'ils s'y inscrivent, en cas de modification (ajout ou suppression)
+
+            }
+        });
+
     }
 
     @Override

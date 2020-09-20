@@ -83,7 +83,7 @@ public class NeighboursListTest {
         // On clique sur le 1er de la liste de MyNeighbours
         onView(ViewMatchers.withId(R.id.list_neighbours))
                 .perform(RecyclerViewActions.actionOnItemAtPosition(0, new ClickViewAction()));
-        // On vérifie que son nom est bien Caroline
+        // On vérifie que la vue a bien été ouverte
         onView(ViewMatchers.withId(R.id.name_profil))
                 .check(matches(isDisplayed()));
     }
